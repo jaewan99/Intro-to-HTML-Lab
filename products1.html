@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Digital Espresso</title>
+    <link rel="icon" type="image/x-icon" href="static/coffee.jpg" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+
+    <!-- <link href="{% static '/M3App/form-validation.css' %}" rel="stylesheet"> -->
+
+    <!-- Bootstrap core CSS -->
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css"
+    />
+    <!-- bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .sidebar {
+        height: 95vh; /* Full height of the viewport */
+        /* Fixed Sidebar (stay in place on scroll) */
+        position: fixed;
+        width: 16.666666%; /* 2/12 columns */
+        background-color: #fff; /* Adjust the color as needed */
+        border-radius: 14px;
+        margin-top: 0;
+      }
+      .card {
+        margin-bottom: 20px; /* Adds space between cards */
+        border-radius: 15px !important;
+      }
+
+      .container-with-line {
+        position: relative; /* Needed for absolute positioning of the pseudo-element */
+        text-align: center; /* Center the image */
+      }
+
+      .container-with-line img {
+        display: inline-block; /* Image as inline-block */
+        vertical-align: middle; /* Aligns image vertically center in the line */
+      }
+
+      .sidebar .nav {
+        background: white;
+        height: 80vh;
+        width: 235px;
+        position: fixed;
+      }
+
+      .sidebar .nav-item {
+        color: gray;
+        font-weight: normal;
+      }
+
+      .sidebar .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border-radius: 10px;
+        color: black !important;
+        text-decoration: none;
+        transition: background-color 0.3s ease, font-weight 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .sidebar .nav-link:hover,
+      .sidebar .nav-link.active {
+        background-color: #ffffff;
+        font-weight: bold;
+        box-shadow: 0 0px 10px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Base Style for Icons */
+      .sidebar .nav-link i {
+        font-size: 1.5em; /* Adjust icon size as needed */
+        margin-right: 10px;
+        color: black; /* Keep icon color black at all times */
+      }
+
+      /* Background for Icon */
+      .sidebar .nav-link .icon-bg {
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 35px; /* Adjust width as needed */
+        height: 35px; /* Adjust height as needed */
+        background-color: #fff; /* White background for icons */
+        border-radius: 10%; /* Circle shape */
+        line-height: 20px; /* Adjust line height to be equal to height for vertical center */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-right: 10px;
+        box-sizing: border-box;
+      }
+
+      /* Hover State for the Icon Background */
+      .sidebar .nav-link:hover .icon-bg,
+      .sidebar .nav-link.active .icon-bg {
+        background-color: #bd9609; /* Gold color for the background */
+      }
+
+      /* Hover State for the Icon */
+      .sidebar .nav-link:hover i,
+      .sidebar .nav-link.active i {
+        color: white; /* White color for the icon */
+      }
+
+      .bi {
+        margin: 0;
+        padding: 0;
+        line-height: 35px;
+      }
+
+      .text-at-bottom {
+        position: absolute; /* Position your text absolutely within the .card */
+        bottom: 0; /* Align it to the bottom */
+        width: 100%; /* Ensure it spans the full width of the card */
+        padding: 10px; /* Add some padding */
+        box-sizing: border-box; /* Include padding in the width for consistent sizing */
+      }
+
+      .card-body {
+        padding-bottom: 60px; /* Adjust the value based on the height of your absolutely positioned text */
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #763939">
+    <main>
+      <div class="container-fluid" style="padding: 30px">
+        <div class="row">
+          <div class="p-0">
+            <!-- Sidebar content -->
+            <div
+              class="sidebar"
+              style="border-radius: 15px; border-bottom: 1px #999; height: 87%"
+            >
+              <div class="container-with-line">
+                <img
+                  src="static/coffee.jpg"
+                  alt="Logo"
+                  style="
+                    height: 100px;
+                    width: 55%;
+                    margin-left: auto;
+                    margin-right: auto;
+                  "
+                  alt="Descriptive Text"
+                />
+              </div>
+              <ol class="flex-column list-group">
+                <li class="list-group-item">
+                  <a href="index.html" class="nav-link">
+                    <span class="icon-bg"
+                      ><i class="bi bi-house-fill col-5 pb-1"></i
+                    ></span>
+                    Home
+                  </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="aboutUs.html" class="nav-link">
+                    <span class="icon-bg"
+                      ><i class="bi bi-people-fill col-5 pb-1"></i
+                    ></span>
+                    About Us
+                  </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="products.html" class="nav-link">
+                    <span class="icon-bg"
+                      ><i class="bi bi-cup-fill col-5 pb-1"></i
+                    ></span>
+                    Products
+                  </a>
+                </li>
+                <li class="list-group-item">
+                  <a href="branches.html" class="nav-link">
+                    <span class="icon-bg"
+                      ><i class="bi bi-globe2 col-5 pb-1"></i
+                    ></span>
+                    Branches
+                  </a>
+                </li>
+              </ol>
+              <p
+                class="text-at-bottom text-center"
+                style="font-weight: bold; color: #a17e00; font-style: italic"
+              >
+                Digital Espresso
+              </p>
+            </div>
+          </div>
+          <div class="col-10 offset-2 ps-4">
+            <!-- Main content -->
+            <div class="container-fluid p-0">
+              <div style="display: flex; align-items: center">
+                <p class="fs-1 fw-bold mb-2 text-black">
+                  Chocolate Chip Cookie
+                </p>
+              </div>
+            </div>
+            <div
+              class="row text-center container rounded-3 p-3 mb-3"
+              style="background-color: rgb(224, 211, 211)"
+            >
+              <div class="col-md-6">
+                <p>
+                  Indulge in our classic Chocolate Chip Cookie, a beloved treat
+                  that promises pure comfort in every bite. This cookie is a
+                  symphony of flavors and textures, with a perfectly balanced
+                  mix of buttery dough and generous chunks of premium semisweet
+                  chocolate. Each bite offers a delightful contrast of crispy
+                  edges and a soft, chewy center, creating a satisfying harmony
+                  of sweetness and richness. Whether enjoyed alongside your
+                  favorite espresso or savored as a standalone treat, our
+                  Chocolate Chip Cookie is a timeless favorite that will
+                  transport you to a world of warmth and nostalgia with every
+                  delicious mouthful.
+                </p>
+                <a href="products.html" class="btn btn-primary"
+                  >Back to Product list</a
+                >
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="static/product1.png"
+                  style="height: 100%; width: 100%"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <!-- end main content -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <footer id="sticky-footer" class="flex-shrink-0 py-2 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Digital Espresso</small>
+    </div>
+  </footer>
+  <!-- jquery -->
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    // Your JavaScript code goes here
+    document.querySelectorAll(".sidebar .nav-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        // Remove 'active' class from all links
+        document.querySelectorAll(".sidebar .nav-link").forEach(function (lnk) {
+          lnk.classList.remove("active");
+        });
+        // Add 'active' class to the clicked link
+        e.currentTarget.classList.add("active");
+      });
+    });
+  </script>
+</html>
